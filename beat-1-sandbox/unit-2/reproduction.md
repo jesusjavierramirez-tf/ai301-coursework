@@ -15,8 +15,7 @@ label is not graded.
 
 **GitHub username**
 
-[Your GitHub username, exactly as it appears on your profile — no `@`, no profile URL. Your
-comments upstream are identified by this name.]
+jesusjavierramirez-tf
 
 ---
 
@@ -24,16 +23,12 @@ comments upstream are identified by this name.]
 
 **Claim comment**
 
-[Link to the comment where you claimed the issue. Use the comment's own permalink, not the
-issue page on its own. **Then paste the text of that comment underneath the link** — the
-pasted text is what this field is graded on, so copy across what you actually posted.]
+I did not post a claim comment upstream. No URL or claim text was recorded.
 
 **Reproduction comment**
 
-[Link to the comment where you posted your reproduction. It must record the environment
-(OS, relevant versions, code state), steps a stranger could follow, and what you observed.
-**Then paste the text of that comment underneath the link** — the pasted text is what this
-field is graded on, so copy across what you actually posted.]
+I did not post a reproduction comment upstream. No URL or reproduction comment text was
+recorded.
 
 ## Eval iterations
 
@@ -42,28 +37,27 @@ fields.
 
 **Run history**
 
-[The agreement score of each run you did, in order. A single run is a complete answer if
-only one run occurred. **The last score in your list must match the agreement line in the
-`eval-run.txt` you committed** — that file is the record of your final run.]
+18/20 agreement on the final complete run.
 
 **Package analysis**
 
-[Pick one scored package (`pkg-01` through `pkg-20` — the four `calib-` packages are never
-scored). Name it by id, say what your rubric decided and what the gold label said, and
-explain why your rubric read it that way.]
+`pkg-09`: the gold label was `accept`, while our rubric verdict was `reject`. The
+disagreement was `failed: behavior_shown`. The package documented a failed reproduction of
+scenario 2 with the environment, steps, expected behavior, actual output, and what differed
+from the issue's conditions, but our `behavior_shown` check was stricter.
 
 **Check rationale**
 
-[Quote one check from the `rubric.md` you uploaded to `tools/repro-check/`, exactly as it reads now.
-Then say why it reads that way — what you revised to get there, or what you rejected in
-favour of it.]
+> Pass if the artifacts demonstrate the behavior described by the issue, or demonstrate that
+> the issue cannot be reproduced; evidence of an adjacent or different problem does not pass.
+
+This check was designed to require evidence directly tied to the reported behavior rather
+than merely related evidence.
 
 **Trade-offs**
 
-[Every check gives something up. Any one of these is a complete answer: a package whose
-result it changes, a canary you re-ran with `--only`, a case you accept it will miss, or a
-stated reason nothing changed elsewhere. "Nothing changed, and here is how I know" earns
-the point in full when the reason follows.]
+The strict `behavior_shown` requirement caused `pkg-09` to be rejected despite the gold label
+being `accept`, while the overall rubric still reached the required `18/20` agreement.
 
 ---
 
