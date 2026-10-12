@@ -55,10 +55,9 @@ happened; these entries are the toolkit's own timeline.
 All four entries are graded. Keep every heading below, and fill each
 one in the week it belongs to.
 
-**Unit 5: [one line on the tool work]**
+**Unit 5: Building and calibrating an issue-discovery skill**
 
-[2-4 sentences: what you built (the scout, your strategy), what broke
-or fell short, what changed because of it.]
+I extended my existing issue-selection skill into `issue-scout`, adding three searches tied to my interests and a ranking process that excludes assigned and bot-authored issues before selecting candidates. In the recorded scan, the searches returned 300 results; the filters removed 32 assigned issues and 99 bot-authored issues, leaving five candidates for evaluation. The scan exposed limitations: automated accounts classified as regular users could slip through, search-result comment counts could disagree with the issue itself, and the rubric's repository-fit and maintainer-activity checks remained ambiguous. I recorded these problems in `scan-notes.md` so future changes can address evidence-backed shortcomings rather than simply making more candidates pass.
 
 **Unit 6: [one line on the tool work]**
 
