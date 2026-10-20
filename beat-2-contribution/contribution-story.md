@@ -59,11 +59,16 @@ one in the week it belongs to.
 
 I extended my existing issue-selection skill into `issue-scout`, adding three searches tied to my interests and a ranking process that excludes assigned and bot-authored issues before selecting candidates. In the recorded scan, the searches returned 300 results; the filters removed 32 assigned issues and 99 bot-authored issues, leaving five candidates for evaluation. The scan exposed limitations: automated accounts classified as regular users could slip through, search-result comment counts could disagree with the issue itself, and the rubric's repository-fit and maintainer-activity checks remained ambiguous. I recorded these problems in `scan-notes.md` so future changes can address evidence-backed shortcomings rather than simply making more candidates pass.
 
-**Unit 6: [one line on the tool work]**
+**Unit 6: Building a voice guard and expanding repository-aware skill guidance**
 
-[2-4 sentences: the voice-guard, the repo-memory file. What broke or
-fell short, and what changed because of it. "Nothing broke" counts when
-it is true - say how you know.]
+I added a canonical voice-guard script and voice guide under `~/.claude/voice-guard/`, updated the personal skill files to point to the shared guide, and replaced the `repro-check` and `plan-check` scope files with the Unit 6 wild-scope versions. I tested the guard manually with example comments: it stopped vague or unsupported claims and allowed a specific, evidence-conscious statement. The automated hook wiring test did not block a command issued through Claude Code's PowerShell tool because the hook was configured to match `Bash`; I identified the mismatch in the debug logs but moved forward rather than completing the wiring verification.
+
+**Toolkit**
+
+- Tool: Claude Code, PowerShell, Python, and the Unit 6 starter files; I used them to install and test the voice guard and update the personal skill files.
+- What it produced: A shared voice-guard script and guide, updated scope files, and manual pass/stop test results.
+- Difficulties: The hook configuration did not intercept commands issued through the PowerShell tool, and the automated wiring test remains unverified.
+- What changed: I updated the voice-guard script to locate `claude.cmd` explicitly and identified the need to include PowerShell in the hook matcher. The final automated wiring test remains unfinished.
 
 **Unit 7: [one line on the tool work]**
 
